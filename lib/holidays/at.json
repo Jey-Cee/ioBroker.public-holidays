@@ -10,5 +10,43 @@
     "referenceHoliday": null,
     "weekdayInMonth": null,
     "enabled": true
+  },
+  {
+    "id": "nationalHoliday",
+    "name": "Staatsfeiertag",
+    "type": "political",
+    "date": "05-01",
+    "states": "Alle",
+    "ruleType": "fixed",
+    "offsetDay": null,
+    "referenceHoliday": null,
+    "weekdayInMonth": null,
+    "enabled": true
+  },
+  {
+
+    "id": "assumptionOfMary",
+    "name": "Maria-Himmelfahrt",
+    "type": "religion",
+    "date": "08-15",
+    "states": "Alle",
+    "ruleType": "fixed",
+    "offsetDay": null,
+    "referenceHoliday": null,
+    "weekdayInMonth": null,
+    "enabled": true
+
+  },
+  {
+    "id": "nationalHoliday",
+    "name": "Nationalfeiertag",
+    "type": "political",
+    "date": "10-26",
+    "states": "Alle",
+    "ruleType": "fixed",
+    "offsetDay": null,
+    "referenceHoliday": null,
+    "weekdayInMonth": null,
+    "enabled": true
   }
 ]
