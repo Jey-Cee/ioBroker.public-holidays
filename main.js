@@ -81,8 +81,8 @@ class PublicHolidays extends utils.Adapter {
 
 		// Check if one or more enabled holidays are today
 
-		// const today = new Date();
-		const today = new Date('2024-05-12T10:16:30.577Z');
+		const today = new Date();
+		// const today = new Date('2024-05-12T10:16:30.577Z');
 		const tomorrow = new Date(today);
 		tomorrow.setDate(today.getDate() + 1);
 		const afterTomorrow = new Date(today);
