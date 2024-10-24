@@ -39,12 +39,39 @@ class PublicHolidays extends utils.Adapter {
 				if (lastSettingsState && lastSettingsState.val) {
 					lastSettings = lastSettingsState.val;
 				}
-				if (JSON.stringify(lastSettings) === JSON.stringify(this.config)) {
-					break updateSettings;
-				}
+
 				const adapterObject = await this.getForeignObjectAsync(
 					'system.adapter.public-holidays.' + this.instance
 				);
+
+				// Check if new holidays exist in the country code holidays, add them if they do
+				const currentHolidays = adapterObject.native['holidays'] || [];
+
+				if (this.config.country === 'de') {
+					const newHolidays = deHolidays.filter(holiday => !currentHolidays.find(current => current.name === holiday.name));
+					if (newHolidays.length > 0) {
+						adapterObject.native['holidays'] = [...currentHolidays, ...newHolidays];
+						await this.setState(`info.lastSettings`, { val: adapterObject.native, ack: true });
+						await this.setForeignObjectAsync(
+							'system.adapter.public-holidays.' + this.instance,
+							adapterObject,
+						);
+					}
+				} else if (this.config.country === 'at') {
+					const newHolidays = atHolidays.filter(holiday => !currentHolidays.find(current => current.name === holiday.name));
+					if (newHolidays.length > 0) {
+						adapterObject.native['holidays'] = [...currentHolidays, ...newHolidays];
+						await this.setState(`info.lastSettings`, { val: adapterObject.native, ack: true });
+						await this.setForeignObjectAsync(
+							'system.adapter.public-holidays.' + this.instance,
+							adapterObject,
+						);
+					}
+				}
+
+				if (JSON.stringify(lastSettings) === JSON.stringify(this.config)) {
+					break updateSettings;
+				}
 
 				if (adapterObject === null || adapterObject === undefined) {
 					break updateSettings;
