@@ -1,8 +1,12 @@
 {
 	"common": {
 		"name": "public-holidays",
-		"version": "0.0.1",
+		"version": "0.0.2",
 		"news": {
+			"0.0.2": {
+				"en": "Fix on first select no data where loaded \nAdd new holidays for Austria \nLoad new holidays to configuration",
+				"de": "Fix bei der ersten Auswahl wurden keine Daten geladen \nHinzufügen neuer Feiertage für Österreich \nLaden neuer Feiertage in die Konfiguration"
+			},
 			"0.0.1": {
 				"en": "initial release",
 				"de": "Erstveröffentlichung",
