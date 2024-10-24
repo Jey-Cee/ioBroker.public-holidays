@@ -1,0 +1,14 @@
+[
+  {
+    "id": "newYear",
+    "name": "Neujahr",
+    "type": "calendar",
+    "date": "01-01",
+    "states": "Alle",
+    "ruleType": "fixed",
+    "offsetDay": null,
+    "referenceHoliday": null,
+    "weekdayInMonth": null,
+    "enabled": true
+  }
+]

@@ -1,0 +1,333 @@
+{
+	"common": {
+		"name": "public-holidays",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
+			}
+		},
+		"titleLang": {
+			"en": "Public Holidays",
+			"de": "Feiertage",
+			"ru": "Государственные праздники",
+			"pt": "Feriados",
+			"nl": "Feestdagen",
+			"fr": "Jours fériés",
+			"it": "Giorni festivi",
+			"es": "Días festivos",
+			"pl": "Święta państwowe",
+			"uk": "Державні свята",
+			"zh-cn": "公共假期"
+		},
+		"desc": {
+			"en": "Calculates public holidays",
+			"de": "Berechnet Feiertage",
+			"ru": "Рассчитывает праздничные дни",
+			"pt": "Calcula feriados",
+			"nl": "Berekent feestdagen",
+			"fr": "Calcule les jours fériés",
+			"it": "Calcola i giorni festivi",
+			"es": "Calcula los días festivos",
+			"pl": "Oblicza święta",
+			"uk": "Розраховує державні свята",
+			"zh-cn": "计算公共假期"
+		},
+		"authors": ["Jey Cee <iobroker@all-smart.net>"],
+		"keywords": ["public holidays", "holidays", "calendar"],
+		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
+		"platform": "Javascript/Node.js",
+		"icon": "public-holidays.webp",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/Jey Cee/ioBroker.public-holidays/main/admin/public-holidays.webp",
+		"readme": "https://github.com/Jey Cee/ioBroker.public-holidays/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"mode": "schedule",
+		"schedule": "0 0 * * *",
+		"allowInit": true,
+		"type": "date-and-time",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "json"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=6.0.11"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=7.0.23"
+			}
+		]
+	},
+	"native": {
+		"country": "",
+		"holidays": []
+	},
+	"objects": [],
+	"instanceObjects": [
+		{
+			"_id": "info",
+			"type": "channel",
+			"common": {
+				"name": {
+					"en": "Info",
+					"de": "Info"
+				}
+			},
+			"native": {}
+		},
+		{
+			"_id": "info.lastSettings",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Last settings",
+					"de": "Letzte Einstellungen"
+				},
+				"desc": {
+					"en": "Stores the last settings.",
+					"de": "Speichert die Letzten Einstellungen"
+				},
+				"type": "string",
+				"role": "state",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "today",
+			"type": "channel",
+			"common": {
+				"name": {
+					"en": "Today",
+					"de": "Heute"
+				}
+			},
+			"native": {}
+		},
+		{
+			"_id": "today.name",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Holiday today - Name",
+					"de": "Heute Feiertag - Name"
+				},
+				"desc": {
+					"en": "What the holiday is today?",
+					"de": "Welcher Feiertag ist heute?"
+				},
+				"type": "string",
+				"role": "state",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "today.boolean",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Holiday today?",
+					"de": "Heute Feiertag?"
+				},
+				"desc": {
+					"en": "Is the holiday today?",
+					"de": "Ist heute Feiertag?"
+				},
+				"type": "boolean",
+				"role": "state",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "tomorrow",
+			"type": "channel",
+			"common": {
+				"name": {
+					"en": "Tomorrow",
+					"de": "Morgen"
+				}
+			},
+			"native": {}
+		},
+		{
+			"_id": "tomorrow.name",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Holiday tomorrow - Name",
+					"de": "Feiertag morgen - Name"
+				},
+				"desc": {
+					"en": "What the holiday is tomorrow?",
+					"de": "Welcher Feiertag ist morgen?"
+				},
+				"type": "string",
+				"role": "state",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "tomorrow.boolean",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Holiday tomorrow?",
+					"de": "Feiertag morgen?"
+				},
+				"desc": {
+					"en": "Is the holiday tomorrow?",
+					"de": "Ist der Feiertag morgen?"
+				},
+				"type": "boolean",
+				"role": "state",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "aftertomorrow",
+			"type": "channel",
+			"common": {
+				"name": {
+					"en": "After tomorrow",
+					"de": "Übermorgen"
+				}
+			},
+			"native": {}
+		},
+		{
+			"_id": "aftertomorrow.name",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Holiday after tomorrow - Name",
+					"de": "Feiertag übermorgen - Name"
+				},
+				"desc": {
+					"en": "What the holiday is in the day after tomorrow?",
+					"de": "Welcher Feiertag ist übermorgen?"
+				},
+				"type": "string",
+				"role": "state",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "aftertomorrow.boolean",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Holiday in the day after tomorrow?",
+					"de": "Urlaub übermorgen?"
+				},
+				"desc": {
+					"en": "Is the holiday in the day after tomorrow?",
+					"de": "Ist übermorgen Feiertag?"
+				},
+				"type": "boolean",
+				"role": "state",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "next",
+			"type": "channel",
+			"common": {
+				"name": {
+					"en": "Next holiday",
+					"de": "Nächster Feiertag"
+				}
+			},
+			"native": {}
+		},
+		{
+			"_id": "next.name",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Next holiday - Name",
+					"de": "Nächster Urlaub - Name"
+				},
+				"desc": {
+					"en": "What the holiday is next?",
+					"de": "Was ist der nächste Feiertag?"
+				},
+				"type": "string",
+				"role": "state",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "next.date",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Next holiday - date?",
+					"de": "Nächster Urlaub - Termin?"
+				},
+				"desc": {
+					"en": "When is the next holiday?",
+					"de": "Wann ist der nächste Feiertag?"
+				},
+				"type": "string",
+				"role": "value.date",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "next.duration",
+			"type": "state",
+			"common": {
+				"name": {
+					"en": "Duration till next holiday",
+					"de": "Dauer bis zum nächsten Feiertag"
+				},
+				"desc": {
+					"en": "Number of days till next holiday",
+					"de": "Anzahl der Tage bis zum nächsten Urlaub"
+				},
+				"type": "number",
+				"role": "value.interval.days",
+				"unit": "days",
+				"read": true,
+				"write": false
+			},
+			"native": {}
+		}
+	]
+}

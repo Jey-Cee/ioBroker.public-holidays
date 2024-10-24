@@ -1,0 +1,44 @@
+{
+	"i18n": true,
+	"type": "panel",
+	"items": {
+		"country": {
+			"type": "select",
+			"label": "Country",
+			"options": [
+				{"label": "Germany", "value":  "de"},
+				{"label": "Austria", "value": "at"},
+				{"label": "Switzerland", "value": "ch"},
+				{"label": "Italy", "value": "it"}
+			],
+			"xs": 12,
+			"sm": 12,
+			"md": 8,
+			"lg": 5,
+			"xl": 3
+		},
+		"_hitSave": {
+			"type": "staticText",
+			"text": "Please wait",
+			"style": {"color":  "red", "fontWeight":  "bolder", "fontSize":  "14px"},
+			"onChange": {
+				"alsoDependsOn": ["country"], "calculateFunc": "setTimeout( () => { const test = () => { document.querySelector('button[aria-label=\"Save\"]').click(); }; test(); setTimeout( () => {window.location.reload()}, 3000)}, 100) "
+			},
+			"xs": 12,
+			"sm": 12,
+			"md": 12,
+			"lg": 10,
+			"xl": 9,
+			"newLine": true
+		},
+		"holidays": {
+			"type": "table",
+			"noDelete": true,
+			"items": [
+				{"type": "checkbox", "title":  "Enabled", "attr": "enabled"},
+				{"type": "text", "readOnly": true, "title":  "Name", "attr": "name", "filter": true, "sort": false, "default": ""},
+				{"type": "text", "readOnly": true, "title":  "states", "attr": "states", "filter": true, "sort": false, "default": ""}
+			]
+		}
+	}
+}
