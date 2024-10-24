@@ -50,7 +50,7 @@ class PublicHolidays extends utils.Adapter {
 					break updateSettings;
 				}
 				// Load original Settings after changing country
-				if (adapterObject.native.country !== lastSettings.country) {
+				if (lastSettings === '' || adapterObject.native.country !== lastSettings?.country) {
 
 					delete adapterObject.native['holidays'];
 					switch (this.config.country) {
