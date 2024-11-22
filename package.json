@@ -6,7 +6,7 @@
     "name": "Jey Cee",
     "email": "iobroker@all-smart.net"
   },
-  "homepage": "https://github.com/Jey Cee/ioBroker.public-holidays",
+  "homepage": "https://github.com/Jey-Cee/ioBroker.public-holidays",
   "license": "MIT",
   "keywords": [
     "public holidays",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jey Cee/ioBroker.public-holidays.git"
+    "url": "https://github.com/Jey-Cee/ioBroker.public-holidays.git"
   },
   "engines": {
     "node": ">= 20"
@@ -71,7 +71,7 @@
     "release": "release-script"
   },
   "bugs": {
-    "url": "https://github.com/Jey Cee/ioBroker.public-holidays/issues"
+    "url": "https://github.com/Jey-Cee/ioBroker.public-holidays/issues"
   },
   "readmeFilename": "README.md"
 }
